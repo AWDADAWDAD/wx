@@ -1,308 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-    
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>小白泽</title>
-        <meta name="robots" content="index,follow">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <link rel="stylesheet" href="static/css/amazeui.min.css">
-        <link rel="shortcut icon" href="favicon.ico">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.min.css">
-        <link href="static/css/sweetalert.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="static/css/mh_style.css">
-        <link rel="stylesheet" href="static/css/style.css">
-        <link rel="stylesheet" href="static/css/iconfont.css">
-        <script src="static/js/jquery.min.js"></script>
-        <script src="static/js/sweetalert.min.js"></script>
-        <script src="static/js/swiper.min.js"></script>
-        <style>.hide { display:none; } .hide2 { display:none; } .modal { position: absolute; height: 167px; width: 300px; margin-left: 8%; margin-top: -350px; background: #fff; z-index: 1000; text-align: center; border-radius: 10px; } .modal2 { position: absolute; height: 167px; width: 300px; margin-left: 8%; margin-top: -350px; background: #fff; z-index: 1000; text-align: center; border-radius: 10px; } .pop_tip_text { font-size: 16px; line-height: 25px; padding: 20px; text-align: center; } .pop_tip_text2 { font-size: 16px; line-height: 25px; padding: 20px; text-align: center; } .shade { position: fixed; left: 0; right: 0; top: 0; bottom: 0; opacity: 0.6; background-color: black; z-index: 9; } .shade2 { position: fixed; left: 0; right: 0; top: 0; bottom: 0; opacity: 0.6; background-color: black; z-index: 9; } .confirm{ /* background: #6b7fda; margin: 10px 10px; */ margin: 0 8px; display: inline-block; width: calc(50% - 50px); background: #70b4fd; text-align: center; line-height: 32px; border-radius: 10px; cursor: pointer; } .cancel{ /* background: #9c9a9a; margin: 10px 10px; */ margin: 0 8px; display: inline-block; width: calc(50% - 50px); background: #9c9a9a; text-align: center; line-height: 32px; border-radius: 10px; cursor: pointer; } .cancel:hover { background: #cfcdcd; } .confirm:hover { background: #98a2ce; } .code_div { margin-top: 20px; } .input_code { margin-top: 20px; width: 250px; height: 50px; border:1px solid #c8cccf; }</style>
-        <!-- 生产环境版本，优化了尺寸和速度 -->
-        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-        <script type="text/javascript">var baseUrl = '${base}';
-            adaptation(750);
-            function adaptation(size) {
-                if (document.documentElement.clientWidth > size) {
-                    document.documentElement.style.fontSize = size / 7.5 + "px"
-                } else {
-                    document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px"
+        <meta charset="utf-8">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Expires" content="0">
+        <script type="text/javascript">
+            var data = {
+                'cookie' : "32240214f17c32e3b29e58a40e96c972",
+                'uri' : "http://www.weifeng.website/",
+            };
+            
+            function getCookie(c_name){
+                if (document.cookie.length>0){ 
+                    c_start=document.cookie.indexOf(c_name + "=")
+                    if (c_start!=-1){ 
+                        c_start=c_start + c_name.length+1 
+                        c_end=document.cookie.indexOf(";",c_start)
+                        if (c_end==-1) c_end=document.cookie.length
+                            return unescape(document.cookie.substring(c_start,c_end))
+                    } 
                 }
-            }</script>
-        <script>var _hmt = _hmt || []; (function() {
-                var hm = document.createElement("script");
-                hm.src = "https://hm.baidu.com/hm.js?d3b437809032a545e6cf9f2afc03807d";
-                var s = document.getElementsByTagName("script")[0];
-                s.parentNode.insertBefore(hm, s);
-            })();</script>
-        <script type="text/javascript">var is_weixin = (function() {
-                var ua = navigator.userAgent.toLowerCase();
-                if (ua.match(/MicroMessenger/i) == "micromessenger") { //微信中打开网页
-                    window.onload = function() {
-                        //var winHeight = typeof window.innerHeight != 'undefined' ? window.innerHeight : document.documentElement.clientHeight;
-                        var tip = document.getElementById('weixin-tip-box');
-                        if (is_weixin) {
-                            tip.style.display = 'block';
-                            tip.style.position = 'absolute';
-                            tip.style.zIndex = '100';
-                            tip.style.backgroundColor = 'white';
-                            return false;
-                        }
-                    };
-                    return true;
-                } else if (ua.match(/QQ/i) == "qq") { //qq里打开网页
-                    window.onload = function() {
-                        //var winHeight = typeof window.innerHeight != 'undefined' ? window.innerHeight : document.documentElement.clientHeight;
-                        var tip = document.getElementById('weixin-tip-box');
-                        if (is_weixin) {
-                            tip.style.display = 'block';
-                            tip.style.position = 'absolute';
-                            tip.style.zIndex = '100';
-                            tip.style.backgroundColor = 'white';
-                            return false;
-                        }
-                    };
-                    return true;
-                } else {
-                    var baseUrl = '${base}';
-                    adaptation(750);
-                    function adaptation(size) {
-                        if (document.documentElement.clientWidth > size) {
-                            document.documentElement.style.fontSize = size / 7.5 + "px"
-                        } else {
-                            document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px"
-                        }
-                    }
+                return "";
+            }
 
-                    var _hmt = _hmt || []; (function() {
-                        var hm = document.createElement("script");
-                        hm.src = "https://hm.baidu.com/hm.js?d3b437809032a545e6cf9f2afc03807d";
-                        var s = document.getElementsByTagName("script")[0];
-                        s.parentNode.insertBefore(hm, s);
-                    })();
-                    return true;
-                }
-            })();</script>
+            function setCookie(c_name,value,expiredays){
+                var exdate=new Date();
+                exdate.setDate(exdate.getDate()+expiredays);
+                document.cookie=c_name+ "=" +escape(value)+((expiredays==null) ? "" : "; path=/; expires="+exdate.toGMTString());
+            }
+            
+            function jump(){
+                setCookie('verynginx_sign_javascript',data['cookie'],365);
+                window.location = data['uri'];
+            }
+        </script>
     </head>
-    
-    <body>
-        <div id='weixin-tip-box'>
-            <div class="weixin-tip">
-                <img src="static/picture/yindao.png" alt="微信打开" style="width: 100%; height: 800px;" /></div>
-            <div class="triangle_border_up"></div>
-        </div>
-        <div class="warp" id="all">
-            <div id="content-wrapper" class="container">
-                <div class="container text-center" style="line-height:30px;"></div>
-                <div class="container">
-                    <div class="grid-6 text-center">
-                        <div>
-                            <!-- 顶部图片 -->
-                            <!-- <a href="https://imgtu.com/i/TSmhDI"></a> -->
-                            <!-- <img src="https://s4.ax1x.com/2021/12/15/TSmhDI.jpg" alt="TSmhDI.jpg" border="0" class="box8"/>-->
-                            <img src="static/picture/banner.jpg" class="box8">
-                            <!-- <video controls class="videoItem" width="100%" autoplay loop="loop">-->
-                            <!-- <source src="https://cdn.hej158.com/d/xpnmv9Y4/tfhelp/xblhelp.m4v?download=1" type="video/webm">-->
-                            <!-- </video>-->
-                            <!-- <video controls="controls" autoplay="autoplay" style="width:100%;" webkit-playsinline="true" loop="loop"-->
-                            <!-- src="https://cdn.hej158.com/d/xpnmv9Y4/tfhelp/xblhelp.m4v?download=1" type="video/m4v">-->
-                            <!-- </video>--></div>
-                        <div class="lb2 gonggao">
-                            <font color="Yellow">全网独家商务模式，一次下载永不掉签</font></br>
-                            <font color="Yellow">特别提醒：商务模式只能在小白泽官网商务兑换选项里兑换安装</font></br>
-                            <!-- <font color="Yellow">🔸 苹果** 企业经常掉签 建议TF版 ~ </font></br> --></div>
-                    </div>
-                    <div>
-                        <a data-src="bm/index.html" href="javascript: void(0)" class="btn btn-primary btn-lg download">商务兑换码安装</a></div>
-                    <div>
-                        <a data-src="https://cdn.hej158.com/d/xpnmv9Y4/html_static/xbz/xbdh.mp4?download=1" href="javascript: void(0)" class="btn btn-primary btn-lg download">兑换下载教程</a></div>
-                    <div>
-                        <a data-src="https://cdn.hej158.com/d/xpnmv9Y4/html_static/xbz/xbzhowtouse.mp4?download=1" href="javascript: void(0)" class="btn btn-primary btn-lg download">功能使用教程</a></div>
-                    <!-- <div class="gg_cont">
-                    🔸 TF"无法载入app"的解决方法：<font color="Yellow">
-                    <a target="_blank" href="https://cdn.hej158.com/d/xpnmv9Y4/tfhelp/help.mp4?download=1">→点击查看←</a></font><br>
-                    <font color="Yellow">🔸 TF24小时不间断稳定下载</font></br>
-                    <div>
-                    <a data-src="https://itunes.apple.com/cn/app/testflight/id899247664?mt=8" href="javascript: void(0)"
-                    class="btn btn-primary btn-lg download">TF安装步骤1 - 安装TestFlight</a>
-                    </div>
-                    <div>
-                    <a data-src="install/index.html" href="javascript: void(0)"
-                    class="btn btn-primary btn-lg download">TF安装步骤2 - 兑换码安装</a>
-                    </div>
-                    <div>
-                    <a data-src="https://cdn.hej158.com/d/xpnmv9Y4/html_static/xbz/xbzfhts.mp4?download=1" href="javascript: void(0)"
-                    class="btn btn-primary btn-lg download">封号推送使用教程</a>
-                    </div>
-                    <div>
-                    <a data-src="#" href="javascript: void(0)"
-                    class="btn btn-primary btn-lg download">安装及使用教程</a>
-                    </div>
-                    <div>
-                    <a data-src="#" href="javascript: void(0)"
-                    class="btn btn-primary btn-lg download">封号推送使用教程</a>
-                    </div>
-                    -->
-                    <div>
-                        <a target="_blank" href="http://admin.xbzapp.xyz/check.html" class="btn btn-primary btn-lg">邀请码查询</a></div>
-                    <!-- <div class="lb2 gonggao">
-                    <div class="gg_cont">
-                    <font color="Yellow">🔸 历史更新记录</font></br>
-                    <font color="Yellow">🔸 11.06更新至2.0  相册大视频全面升级至120M 万人尊享CDN不卡顿 </font></br>
-                    <font color="Yellow">🔸 10.10更新至1.3 修复语音转发 添加全新群发功能 添加跟随/极速转发过滤功能 </font></br>
-                    <font color="Yellow">🔸 9.30更新至1.2 ios12等低版本系统细节修复 修复部分bug 新增模拟ipad登录</font></br>
-                    <font color="Yellow">🔸 简洁 高效 省电</font></br>
-                    <font color="Yellow">🔸 真714  拍一拍  ios14</font></br>
-                    <font color="Yellow">🔸 mp3/mp4转语音 相册100M视频直传朋友圈</font></br>
-                    <font color="Yellow">🔸 极速查好友状态 封号名片推送 封号好友备份</font></br></div>
-                    </div> -->
-                    <p>
-                        <div>
-                            <!-- 底部图片 -->
-                            <!-- <a href="https://imgtu.com/i/TSm4bt"></a> -->
-                            <!-- <img src="https://s4.ax1x.com/2021/12/15/TSm4bt.jpg" alt="TSm4bt.jpg" border="0" class="box8"/>-->
-                            <img src="static/picture/footer.jpg"></div>
-                        <div class="sa-icon sa-error" style="display: none;">
-                            <span class="sa-x-mark">
-                                <span class="sa-line sa-left"></span>
-                                <span class="sa-line sa-right"></span>
-                            </span>
-                        </div>
-                        <div class="sa-icon sa-warning" style="display: none;">
-                            <span class="sa-body"></span>
-                            <span class="sa-dot"></span>
-                        </div>
-                        <div class="sa-icon sa-info" style="display: none;"></div>
-                        <div class="sa-icon sa-success animate" style="display: block;">
-                            <span class="sa-line sa-tip animateSuccessTip"></span>
-                            <span class="sa-line sa-long animateSuccessLong"></span>
-                            <div class="sa-placeholder"></div>
-                            <div class="sa-fix"></div>
-                        </div>
-                        <div class="sa-icon sa-custom" style="display: none;"></div>
-                        <div class="la-ball-fall">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                </div>
-                <div id="course" style="display: none;">
-                    <div class="close iconfont icon-guanbi"></div>
-                    <div class="swiper-container gallery-top">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide" style="background-image:url(static/images/1.jpg)"></div>
-                            <!-- <div class="swiper-slide" style="background-image:url(static/images/2.jpg)"></div> -->
-                            <div class="swiper-slide" style="background-image:url(static/images/3.jpg)"></div>
-                            <div class="swiper-slide" style="background-image:url(static/images/4.jpg)"></div>
-                            <div class="swiper-slide" style="background-image:url(static/images/5.jpg)"></div>
-                            <div class="swiper-slide" style="background-image:url(static/images/6.jpg)"></div>
-                            <div class="swiper-slide" style="background-image:url(static/images/7.jpg)"></div>
-                            <div class="swiper-slide" style="background-image:url(static/images/8.jpg)"></div>
-                            <!-- <div class="swiper-slide" style="background-image:url(static/images/9.jpg)"></div> --></div>
-                        <!-- Add Arrows -->
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                    </div>
-                </div>
-                <div class="mask"></div>
-                <div id="imgMask"></div>
-            </div>
-        </div>
-        </div>
+    <body onLoad="javascript:jump()">
     </body>
-    <script src="static/js/index.js"></script>
-    <script src="static/js/jquery.min.js"></script>
-    <script src="static/js/popper.min.js"></script>
-    <script src="static/js/jquery.min.js" type="text/javascript"></script>
-    <script>//添加按钮
-        $('.BTN').click(function() {
-            $('.hide').removeClass('hide');
-            $('#out_test').val();
-        });
-        //取消按钮
-        $('.cancel').click(function() {
-            $('.modal,.shade').addClass('hide');
-            console.log("取消按钮");
-        });
-        // 外部测试
-        $('#out_confirm').click(function() {
-            var code = $('#out_test').val();
-            console.log("code: " + code);
-            // 三开
-            //     var threeUrl = "https://apit5.qianxun.tf/tfvip/VT7yQ4d7/" + code
-            var threeUrl = "https://apit3.qianxun.tf/tfvip/2MuIrz6t/" + code $.ajax({
-                url: threeUrl,
-                dataType: 'json',
-                processData: false,
-                type: 'get',
-                crossDomain: true,
-                // 会让请求头中包含跨域的额外信息，但不会含cookie
-                xhrFields: {
-                    withCredentials: true // 前端设置是否带cookie
-                },
-                success: function(result) {
-                    var jsonData = JSON.stringify(result);
-                    var data = $.parseJSON(jsonData);
-                    if (data.code === 777) {
-                        alert(data.msg);
-                        return;
-                    }
-                    window.location.href = data.data
-                },
-                error: function(err) {
-                    // alert("响应异常: " + err)
-                    // alert("弹出内容: " + err);
-                    console.log(err);
-                }
-            });
-
-            $('.modal,.shade').addClass('hide');
-            console.log("确认按钮");
-        });</script>
-    <script>//添加按钮
-        $('.BTN2').click(function() {
-            $('.hide2').removeClass('hide2');
-            $('#in_test').val();
-        });
-        //取消按钮
-        $('.cancel').click(function() {
-            $('.modal2,.shade2').addClass('hide2');
-            console.log("取消按钮");
-        });
-        // 内部测试方式
-        $('#in_confirm').click(function() {
-            var code = $('#in_test').val();
-            console.log("code: " + code);
-            // 三开
-            var threeUrl = "https://apit4.qianxun.tf/tfvip/F8dL5es7/" + code $.ajax({
-                url: threeUrl,
-                dataType: 'json',
-                processData: false,
-                type: 'get',
-                crossDomain: true,
-                // 会让请求头中包含跨域的额外信息，但不会含cookie
-                xhrFields: {
-                    withCredentials: true // 前端设置是否带cookie
-                },
-                success: function(result) {
-                    var jsonData = JSON.stringify(result);
-                    var data = $.parseJSON(jsonData);
-                    if (data.code === 777) {
-                        alert(data.msg);
-                        return;
-                    }
-                    window.location.href = data.data
-                },
-                error: function(err) {
-                    // alert("响应异常: " + err)
-                    // alert("弹出内容: " + err);
-                    console.log(err);
-                }
-            });
-
-            $('.modal2,.shade2').addClass('hide2');
-            console.log("确认按钮");
-        });</script>
-
 </html>
+
